@@ -35,7 +35,7 @@
   /* end of Ahmed css */
 
   /* EC styles */
-  .base-input {
+ /* .base-input {
     @apply p-3 mt-1 w-72 rounded-3xl border-2 border-gray-500 text-left focus:outline-none focus:ring-0;
   }
 
@@ -53,6 +53,28 @@
   /* EC //END  */
 
   /* abeco  */
+.base-input {
+    @apply border-b-2 border-gray-300 outline-none focus:border-gray-600;
+}
+
+.success-input {
+    @apply border-2 border-green-300 w-full;
+}
+
+#my-input {
+
+}
+
+.class-name{
+
+}
+.success {
+    @apply border border-gray-300 bg-green-600 text-white p-2 block;
+}
+
+.error {
+    @apply block bg-red-500 text-white;
+}
 #label{
     @apply text-4xl font-serif text-blue-900;
   }

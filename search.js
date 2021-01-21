@@ -86,10 +86,10 @@ searchForm.addEventListener('submit', async function (e) {
                 
                 <a href="${job.redirect_url}">
                        ${job.title}
-                 </a>| ${job.location.display_name} 
+                 ---------- ${job.location.display_name} </a> 
                  
                   <div>
-                   <a class="far fa-heart" id="favorite">Like</a>  
+                   <i class="far fa-heart" id="favorite">Like</i>  
                    <a class="far fa-heart"></a>          
                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
                    <link rel="canonical" href="/web/tweet-button">
@@ -109,10 +109,10 @@ searchForm.addEventListener('submit', async function (e) {
     // console.log(searchFull.classList)
   })
 })
-
+// 92b62ee9bfd90c11c097004b51438beb
 async function searchJobs (jobString, jobsCount = 8, country = SEARCH_COUNTRY) {
 
-  const url = `http://api.adzuna.com/v1/api/jobs/${country}/search/1?app_id=a7547f34&app_key=92b62ee9bfd90c11c097004b51438beb&results_per_page=${jobsCount}&what=${jobString}&content-type=application/json`
+  const url = `http://api.adzuna.com/v1/api/jobs/${country}/search/1?app_id=d9bee79e&app_key=a8eea83bb5dbb169da71decb4c8cac85&results_per_page=${jobsCount}&what=${jobString}&content-type=application/json`
   console.log(url)
 
   const result = await fetch(url)

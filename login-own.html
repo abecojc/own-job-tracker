@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./dist/tailwind.css">
+    <title>Sign Up - Login</title>
+</head>
+
+<body>
+
+    <form id="form" action="search-display.html">
+        <!--    Full page background-->
+        <div class="bg-gray-400 h-screen flex justify-center items-center">
+            <!-- inner box form-->
+            <div class="bg-white rounded shadow-lg p-6 w-1/3" id="my-form">
+                
+                <div class="my-4" id="my-username">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="your username"
+                           class="base-input block">
+                    <div>
+                        <a href="">Empty</a>
+                    </div>
+                </div>
+                
+                <div class="my-4">
+                    
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="me@domain.com"
+                           class="base-input">
+                    
+                    <div>
+                    
+                    </div>
+                </div>
+                
+                <div class="my-4">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" class="base-input">
+                    <div>
+                    
+                    </div>
+                </div>
+                
+                <div class="my-4">
+                    <label for="password-2">Confirm Password</label>
+                    <input type="password" id="password-2" name="password2" placeholder="Re-enter password" class="base-input">
+                    <div>
+                    
+                    </div>
+                </div>
+                
+                <button class="bg-green-200 p-3 w-full" id="submit">Register Now</button>
+            
+            
+            </div>
+        
+        </div>
+    </form>
+
+</body>
+<script src="login-own.js"></script>
+</html>
