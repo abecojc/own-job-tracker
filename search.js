@@ -89,9 +89,8 @@ searchForm.addEventListener('submit', async function (e) {
                  ---------- ${job.location.display_name} </a> 
                  
                   <div>
-                   <i class="far fa-heart" id="favorite">Like</i>  
-                   <a class="far fa-heart"></a>          
-                   <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
+                   <a href=""><i class="far fa-heart bg-white text-red-400" id="favorite">Like</i></a>                     
+                   <a class="twitter-share-button bg-white text-blue-800" href="https://twitter.com/intent/tweet">Tweet</a>
                    <link rel="canonical" href="/web/tweet-button">
                  </div>
                 
