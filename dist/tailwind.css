@@ -580,12 +580,6 @@ video {
   }
 }
 
-/* custom css goes here */
-
-/* Ahmed css */
-
-/* Style all font awesome icons */
-
 .fa {
   padding: 20px;
   font-size: 30px;
@@ -616,29 +610,6 @@ video {
   color: white;
 }
 
-/* end of Ahmed css */
-
-/* EC styles */
-
-/* .base-input {
-    @apply p-3 mt-1 w-72 rounded-3xl border-2 border-gray-500 text-left focus:outline-none focus:ring-0;
-  }
-
-.success-input {
-    @apply bg-gray-200 border-2 border-green-500 p-3 mt-1 w-72 rounded-3xl text-left focus:outline-none focus:ring-0;
-  }
-
-.success {
-    @apply border-2 border-green-500 p-3 mt-1 w-72 rounded-3xl text-left focus:outline-none focus:ring-0;
-  }
-
-.error {
-    @apply border-2 border-red-500 p-3 mt-1 w-72 rounded-3xl text-left focus:outline-none focus:ring-0;
-  }
-  /* EC //END  */
-
-/* abeco  */
-
 .base-input {
   --tw-border-opacity: 1;
   border-color: rgba(209, 213, 219, var(--tw-border-opacity));
@@ -660,12 +631,6 @@ video {
   border-color: rgba(110, 231, 183, var(--tw-border-opacity));
   border-width: 2px;
   width: 100%;
-}
-
-#my-input {
-}
-
-.class-name{
 }
 
 .success {
@@ -703,8 +668,6 @@ video {
   height: 1rem;
   width: 18rem;
 }
-
-/* abeco //END */
 
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;

@@ -1,9 +1,5 @@
 @tailwind base;
 @tailwind components;
-/* custom css goes here */
-
- /* Ahmed css */
-/* Style all font awesome icons */
 
 .fa {
     padding: 20px;
@@ -32,27 +28,6 @@
     color: white;
   }
 
-  /* end of Ahmed css */
-
-  /* EC styles */
- /* .base-input {
-    @apply p-3 mt-1 w-72 rounded-3xl border-2 border-gray-500 text-left focus:outline-none focus:ring-0;
-  }
-
-.success-input {
-    @apply bg-gray-200 border-2 border-green-500 p-3 mt-1 w-72 rounded-3xl text-left focus:outline-none focus:ring-0;
-  }
-
-.success {
-    @apply border-2 border-green-500 p-3 mt-1 w-72 rounded-3xl text-left focus:outline-none focus:ring-0;
-  }
-
-.error {
-    @apply border-2 border-red-500 p-3 mt-1 w-72 rounded-3xl text-left focus:outline-none focus:ring-0;
-  }
-  /* EC //END  */
-
-  /* abeco  */
 .base-input {
     @apply border-b-2 border-gray-300 outline-none focus:border-gray-600;
 }
@@ -61,13 +36,6 @@
     @apply border-2 border-green-300 w-full;
 }
 
-#my-input {
-
-}
-
-.class-name{
-
-}
 .success {
     @apply border border-gray-300 bg-green-600 text-white p-2 block;
 }
@@ -83,6 +51,5 @@
     @apply bg-gray-400 flex h-4 w-72;
   }
 
-/* abeco //END */
 
 @tailwind utilities;
