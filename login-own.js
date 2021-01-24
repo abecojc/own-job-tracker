@@ -120,3 +120,54 @@ function validateMinLength (input) {
         showSuccess(input,`${inputName} is long enough`)
     }
 }
+
+// Firebase App (the core Firebase SDK) is always required and
+// must be listed before other Firebase SDKs
+//const firebase = require("firebase/app");
+
+// Add the Firebase products that you want to use
+//require("firebase/auth");
+//require("firebase/firestore");
+
+// Firebase App (the core Firebase SDK) is always required and
+// must be listed before other Firebase SDKs
+// import firebase from "firebase/app";
+//
+// // Add the Firebase services that you want to use
+// import "firebase/auth";
+// import "firebase/firestore";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCk3Eni5C7tY-k_4MVLvrtSgTU3gvyGmf0",
+    authDomain: "own-job-tracker.firebaseapp.com",
+    projectId: "own-job-tracker",
+    storageBucket: "own-job-tracker.appspot.com",
+    messagingSenderId: "873534015254",
+    appId: "1:873534015254:web:53adf9f10d79a940e73237"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig)
+var firestore = firebase.firestore()
+
+const submitBtn = document.querySelector('#submitBt')
+let emails = document.querySelector('#email')
+let passwords = document.querySelector('#password')
+
+const info = firestore.collection("userInfo")
+
+submitBtn.addEventListener('click', ()=> {
+    let emailsInput = emails.value
+    let passwordsInput = passwords.value
+
+    info.doc().set({
+        email: emailsInput,
+        password: passwordsInput
+    })
+        .then(()=>{
+            console.log('info saved')
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+})
