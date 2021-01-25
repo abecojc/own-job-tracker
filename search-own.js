@@ -111,7 +111,7 @@ searchForm.addEventListener('submit', async function (e) {
 // 92b62ee9bfd90c11c097004b51438beb
 async function searchJobs (jobString, jobsCount = 8, country = SEARCH_COUNTRY) {
 
-  const url = `http://api.adzuna.com/v1/api/jobs/${country}/search/1?app_id=d9bee79e&app_key=a8eea83bb5dbb169da71decb4c8cac85&results_per_page=${jobsCount}&what=${jobString}&content-type=application/json`
+  const url = `https://api.adzuna.com/v1/api/jobs/${country}/search/1?app_id=d9bee79e&app_key=a8eea83bb5dbb169da71decb4c8cac85&results_per_page=${jobsCount}&what=${jobString}&content-type=application/json`
   console.log(url)
 
   const result = await fetch(url)
