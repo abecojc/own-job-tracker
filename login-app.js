@@ -36,13 +36,6 @@ form.addEventListener('submit', function () {
 
   validatePassMatch(password2, password1)
 
-  //@TODO: Code Challenge 5c: Starting from your refactored code,
-  // 1. Implement and use the  validatePassMatch() function to confirm both passwords match
-  // 2. Implement and use the emailValidates() function to confirm it's a valid email. See: https://stackoverflow.com/a/46181
-
-  //@TODO: Code Challenge 5b: Refactor your CC 5a to use function with the "blueprints" below
-  // validateIsEmail(email)
-
 })
 
 function validateEmpty(input) { 
