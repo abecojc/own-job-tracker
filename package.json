@@ -11,5 +11,6 @@
      "scripts": {
           "dev": "live-server .",
           "tw": "tailwind build ./src/tailwind.css -o ./dist/tailwind.css"
+
      }
 }

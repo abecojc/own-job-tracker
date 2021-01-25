@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./dist/tailwind.css">    
+    <title>Grand Horizon</title>
+</head>
+
+<body>
+<!-- Header  -->
+    <nav class="absolute">
+        <div class="fixed bg-black flex flex-wrap justify-between w-screen text-center border-b-4 border-blue-900">
+            
+            <div class="h-24 w-24 m-2">
+                <a href="home.html"><img src="images/grand-horizon.png" class="w-24 bg-white border-2 border-black rounded-3xl hover:bg-blue-400" alt="logo-arrows"></a>
+            </div>
+            <div class="flex">
+                <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-yellow-200 hover:bg-blue-500">
+                    <a href="signup-own.html">About</a>
+                </div>
+                <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-yellow-200 hover:bg-blue-500">
+                    <a href="signup-own.html">Contact</a>
+                </div>
+                <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-yellow-200 hover:bg-blue-500">
+                    <a href="signup-own.html">Resources</a>
+                </div>
+            </div>
+            
+            <div class="bg-yellow-200 rounded-2xl h-16 p-4 my-2 mx-6 border-2 border-white hover:bg-blue-500">
+                <a href="#sign-in">Log in</a>
+            </div>
+        </div>
+    </nav>
+<!-- Main section  -->
+  
+     <div style="background-image: url('images/job.jpeg')" id="header" class="bg-no-repeat bg-center bg-cover h-screen bg-yellow-200 w-screen">
+         <div class="pt-28 text-center">
+            <div class="p-6 w-3/5 text-center bg-black shadow-2xl font-sans rounded-lg">
+                <div class="text-3xl text-yellow-200">Grand Horizon Inc.</div>
+                <div class="text-xl text-white">Job Search</div>
+            </div>
+            
+            <div class="flex m-12">
+                 <div id="sing-in" class="py-12 shadow-2xl bg-black bg-opacity-50 h-96 w-1/2 rounded-xl border-4 border-yellow-200">
+                     <form id="form" action="search-own.html">
+                        <h1 class="text-xl text-white">
+                            Sign in to Search for jobs
+                        </h1>
+        
+                        <label for="email" class="text-white">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email" class="emailClass my-4 w-2/3 rounded-lg text-center border-2 border-blue-900" name="emailName">
+        
+                        <label for="password" class="text-white">Password</label>
+                        <input type="text" id="password" placeholder="Enter your password" class="passwordClass my-4 w-2/3 rounded-lg text-center border-2 border-blue-900" name="passName">
+        
+                        <button id="submit" class="submit1 border-2 border-blue-900 mt-2 rounded-lg bg-blue-400 hover:bg-green-400">Sign in</button>
+    
+                        <p href="signup-own.html" class="text-white">Create an account . Sign Up</p>
+                   
+                     </form>
+                 </div>
+                
+                 <div class="bg-black bg-opacity-50 text-white rounded-2xl p-4 mx-12 w-1/2 border-4 border-yellow-200">
+                    <h1>News feed</h1>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus eveniet illum minima nam obcaecati odio quae quaerat quisquam! Blanditiis commodi consequuntur corporis cumque doloribus earum facere fuga harum incidunt iste, itaque maxime nihil odio omnis optio pariatur porro quia quo sapiente sunt ut velit voluptas voluptates! Non odit, rerum!
+                 </div>
+            </div>
+             
+            
+         </div>
+    
+     </div>
+
+     <div class="flex justify-center h-screen w-screen bg-black border-4 border-white p-5 overflow-auto items-center">
+        <a href="#"><i id="linkedin" class="fa fa-linkedin hover:bg-blue-500"></i></a>
+        <a href="#"><i id="twitter" class="fa fa-twitter"></i></a>
+        <a href="#"><i id="facebook" class="fa fa-facebook"></i></a>
+        <a href="#"><i id="instagram" class="fa fa-instagram hover:bg-blue-500"></i></a>
+     </div>
+
+    <div class="bg-black h-screen">Partners</div>
+    <div class="h-screen">Terms and conditions</div>
+    
+    <div class="flex justify-center w-screen">
+        <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-black hover:bg-blue-500">
+            <a href="signup-own.html">About</a>
+        </div>
+        <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-black hover:bg-blue-500">
+            <a href="signup-own.html">Contact</a>
+        </div>
+        <h3>Copyright 2021</h3>
+    </div>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCk3Eni5C7tY-k_4MVLvrtSgTU3gvyGmf0",
+            authDomain: "own-job-tracker.firebaseapp.com",
+            projectId: "own-job-tracker",
+            storageBucket: "own-job-tracker.appspot.com",
+            messagingSenderId: "873534015254",
+            appId: "1:873534015254:web:53adf9f10d79a940e73237"
+        };
+        
+        // Initialize Firebase
+       // firebase.initializeApp(firebaseConfig)
+        const firebase = require('firebase')
+        firebase.initializeApp(firebaseConfig)
+        const firestore = firebase.firestore()
+        const info = firestore.collection("userInfo")
+
+    </script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+    
+    <script src="./signin-own.js"></script>
+</body>
+</html>
