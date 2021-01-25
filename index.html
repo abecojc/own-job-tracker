@@ -20,13 +20,13 @@
             </div>
             <div class="flex">
                 <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-yellow-200 hover:bg-blue-500">
-                    <a href="signup-own.html">About</a>
+                    <a href="#">About</a>
                 </div>
                 <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-yellow-200 hover:bg-blue-500">
-                    <a href="signup-own.html">Contact</a>
+                    <a href="#">Contact</a>
                 </div>
                 <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-yellow-200 hover:bg-blue-500">
-                    <a href="signup-own.html">Resources</a>
+                    <a href="#">Resources</a>
                 </div>
             </div>
             
@@ -46,7 +46,8 @@
             
             <div class="flex m-12">
                  <div id="sing-in" class="py-12 shadow-2xl bg-black bg-opacity-50 h-96 w-1/2 rounded-xl border-4 border-yellow-200">
-                     <form id="form" action="search-own.html">
+                     <form id="form" >
+<!--                         action="search-own.html">-->
                         <h1 class="text-xl text-white">
                             Sign in to Search for jobs
                         </h1>
@@ -59,7 +60,7 @@
         
                         <button id="submit" class="submit1 border-2 border-blue-900 mt-2 rounded-lg bg-blue-400 hover:bg-green-400">Sign in</button>
     
-                        <p href="signup-own.html" class="text-white">Create an account . Sign Up</p>
+                        <p><a href="signup-own.html" class="text-white">Create an account . Sign Up</a></p>
                    
                      </form>
                  </div>
@@ -85,17 +86,18 @@
     <div class="bg-black h-screen">Partners</div>
     <div class="h-screen">Terms and conditions</div>
     
-    <div class="flex justify-center w-screen">
-        <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-black hover:bg-blue-500">
-            <a href="signup-own.html">About</a>
-        </div>
-        <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-black hover:bg-blue-500">
-            <a href="signup-own.html">Contact</a>
-        </div>
-        <h3>Copyright 2021</h3>
-    </div>
+    <ul class="flex justify-center w-screen">
+        <li class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-black hover:bg-blue-500">
+            <a href="#">About</a>
+        </li>
+        <li class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-black hover:bg-blue-500">
+            <a href="#">Contact</a>
+        </li>
+        <li>Copyright 2021</li>
+    </ul>
 
     <script>
+        const firebase = require('firebase/app')
         const firebaseConfig = {
             apiKey: "AIzaSyCk3Eni5C7tY-k_4MVLvrtSgTU3gvyGmf0",
             authDomain: "own-job-tracker.firebaseapp.com",
@@ -103,21 +105,22 @@
             storageBucket: "own-job-tracker.appspot.com",
             messagingSenderId: "873534015254",
             appId: "1:873534015254:web:53adf9f10d79a940e73237"
-        };
+        }
         
+        firebase.initializeApp(firebaseConfig)
         // Initialize Firebase
        // firebase.initializeApp(firebaseConfig)
-        const firebase = require('firebase')
-        firebase.initializeApp(firebaseConfig)
+        
+        
         const firestore = firebase.firestore()
         const info = firestore.collection("userInfo")
 
     </script>
     
-    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
-    
+    <script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+    <script defer src="./init-firebase.js"></script>
     <script src="./signin-own.js"></script>
 </body>
 </html>
