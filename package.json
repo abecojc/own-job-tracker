@@ -9,7 +9,9 @@
           "tailwindcss": "^2.0.2"
      },
      "scripts": {
+          "firebase": "firebase .",
           "dev": "live-server .",
-          "tw": "tailwind build ./src/tailwind.css -o ./dist/tailwind.css"
+          "tw": "tailwind build ./src/tailwind.css -o ./dist/tailwind.css",
+
      }
 }
