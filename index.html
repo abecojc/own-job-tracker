@@ -37,7 +37,7 @@
     </nav>
 <!-- Main section  -->
   
-     <div style="background-image: url('images/job.jpeg')" id="header" class="bg-no-repeat bg-center bg-cover h-screen bg-yellow-200 w-screen">
+     <div style="background-image: url('images/job.jpeg')" id="header" class="bg-no-repeat bg-center bg-cover h-screen bg-black w-screen">
          <div class="pt-28 text-center">
             <div class="p-6 w-3/5 text-center bg-black shadow-2xl font-sans rounded-lg">
                 <div class="text-3xl text-yellow-200">Grand Horizon Inc.</div>
@@ -60,7 +60,7 @@
         
                         <button id="submit" class="submit1 border-2 border-blue-900 mt-2 rounded-lg bg-blue-400 hover:bg-green-400">Sign in</button>
     
-                        <p><a href="signup-own.html" class="text-white">Create an account . Sign Up</a></p>
+                        <p><a href="signup-own.html" class="text-white">Sign Up</a></p>
                    
                      </form>
                  </div>
@@ -96,31 +96,7 @@
         <li>Copyright 2021</li>
     </ul>
 
-    <script>
-        const firebase = require('firebase/app')
-        const firebaseConfig = {
-            apiKey: "AIzaSyCk3Eni5C7tY-k_4MVLvrtSgTU3gvyGmf0",
-            authDomain: "own-job-tracker.firebaseapp.com",
-            projectId: "own-job-tracker",
-            storageBucket: "own-job-tracker.appspot.com",
-            messagingSenderId: "873534015254",
-            appId: "1:873534015254:web:53adf9f10d79a940e73237"
-        }
-        
-        firebase.initializeApp(firebaseConfig)
-        // Initialize Firebase
-       // firebase.initializeApp(firebaseConfig)
-        
-        
-        const firestore = firebase.firestore()
-        const info = firestore.collection("userInfo")
-
-    </script>
     
-    <script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
-    <script defer src="./init-firebase.js"></script>
-    <script src="./signin-own.js"></script>
+    <script src="./signup-own.js"></script>
 </body>
 </html>

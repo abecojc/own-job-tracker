@@ -1,5 +1,11 @@
 
 // Declaring variables
+
+// import firebase from 'firebase'
+// require('firebase/auth')
+
+import firebase from "firebase";
+
 const regForm = document.querySelector('#form')
 
 const username = document.querySelector('#username')
@@ -8,11 +14,20 @@ const email = document.querySelector('#email')
 
 const password = document.querySelector('#password')
 
-const password2 = document.querySelector('#password-2')
+const password2 = document.querySelector('#password-repeat')
+
+//sign in
+
+let emails = document.querySelector('#email')
+
+let passwords = document.querySelector('#password')
+
+//const signIn = document.querySelector('#submit')
+
 
 // Function to execute when 'Register Now' button is clicked
 regForm.addEventListener('submit', function (e) {
-    e.preventDefault()
+    // e.preventDefault()
 
 //calling validating functions
     if(!validateEmpty(username) &&
@@ -25,9 +40,9 @@ regForm.addEventListener('submit', function (e) {
         validateMinLength (password2)
         validatePassMatch(password,password2)
     }
+    signUp()
+    signIn()
 
-
-    //validateEmail(email)
 })
 
 // checking if input field is empty or not
@@ -93,3 +108,39 @@ function validateMinLength (input) {
         showSuccess(input,`${inputName} is long enough`)
     }
 }
+
+ //   const firebase = require('firebase/app')
+
+ const firebaseConfig = {
+    apiKey: "AIzaSyCk3Eni5C7tY-k_4MVLvrtSgTU3gvyGmf0",
+    authDomain: "own-job-tracker.firebaseapp.com",
+    projectId: "own-job-tracker",
+    storageBucket: "own-job-tracker.appspot.com",
+    messagingSenderId: "873534015254",
+    appId: "1:873534015254:web:53adf9f10d79a940e73237"
+}
+// const firestore = firebase.firestore()
+// const info = firestore.collection("userInfo")
+
+    firebase.initializeApp(firebaseConfig)
+
+    const auth = firebase.auth()
+
+
+    function signUp(){
+
+        const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
+        promise.catch(e => alert(e.message));
+
+        alert("Signed Up");
+        alert("Now, Sign In with your email and password")
+    }
+
+    function signIn(){
+
+        const promise = auth.signInWithEmailAndPassword(emails.value, passwords.value);
+        promise.catch(e => alert(e.message));
+
+    }
+
+
