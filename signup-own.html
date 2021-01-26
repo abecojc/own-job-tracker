@@ -6,14 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link rel="stylesheet" href="./dist/tailwind.css">
     <title>Sign Up</title>
 </head>
 
 <body>
 
-    <form id="form" >
-<!--          action="search-own.html">-->
+    <form id="form" action="search-own.html">
         <!--    Full page background-->
         <div class="bg-gray-400 h-screen flex justify-center items-center">
             <!-- inner box form-->
@@ -48,25 +48,24 @@
                 </div>
                 
                 <div class="my-4">
-                    <label for="password-2">Confirm Password</label>
-                    <input type="password" id="password-2" name="password2" placeholder="Re-enter password" class="base-input">
+                    <label for="password-repeat">Confirm Password</label>
+                    <input type="password" id="password-repeat" name="password-repeat" placeholder="Re-enter password" class="base-input">
                     <div>
                     
                     </div>
                 </div>
                 
-                <button class="bg-green-200 p-3 w-full" id="submit">Register Now</button>
+                <button class="bg-green-200 p-3 w-full" id="submit">Sign up</button>
             
             
             </div>
         
         </div>
     </form>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
 
+    <script type="module" src="signup-own.js"></script>
 </body>
 
-<script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
-
-<script src="signup-own.js"></script>
 </html>
