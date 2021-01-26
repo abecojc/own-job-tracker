@@ -8,7 +8,7 @@ const signIn = document.querySelector('#submit')
 //const info = firestore.collection("userInfo")
 
 signIn.addEventListener('click',(e)=>{
-    // e.preventDefault()
+    e.preventDefault()
 
         let email = emails.value
         let password = passwords.value
@@ -20,6 +20,8 @@ signIn.addEventListener('click',(e)=>{
             email: email,
             password: password
         })
+    console.log(info.doc().value)
+
         .then(()=>{
             console.log('info saved')
         })
