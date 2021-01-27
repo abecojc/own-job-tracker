@@ -1,9 +1,17 @@
 ---
 marp: true
 ---
+ Great Horizons
+ Job search website:
 
-# Great Horizons
-## A job search with functionalities:
+
+
+ Author: Abeco Rwakabuba
+ [@abecojc]
+
+  ------
+
+## functionalities
 - keyword search
 - filters
 - create an account
@@ -28,7 +36,10 @@ marp: true
 
 
  -------
- ## Balsamic : wireframe
+ ## Introduction 
+ # Quest
+
+ ### Balsamic : wireframe
  (screenshot)
 
 
@@ -41,12 +52,14 @@ marp: true
 
 
  -------
+ # Solution
  ## Firebase : authentication / storage
  (screenshot)
 
 
 
  --------
+ 
  ## Adzuna : jobs API
  (screenshot)
 
@@ -72,5 +85,21 @@ marp: true
 
 
  -----
+
+## Future work
+
+ - Capstone
+
+ - msimbo website
+
+ - church website
+
+ - my resume on git.io/
+
+ ------
+
+
+
+
 
  
