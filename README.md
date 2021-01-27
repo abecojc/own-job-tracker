@@ -1,16 +1,22 @@
+
+# Great Horizons
+## Job search website:   
+
+
+Author: Abeco Rwakabuba
+[@abecojc](htt)
+
 ---
-marp: true
+# Roadmap
+
+Intro
+Issue 
+Solution
+
+
+
 ---
- Great Horizons
- Job search website:
-
-
-
- Author: Abeco Rwakabuba
- [@abecojc]
-
-  ------
-
+#Intro
 ## functionalities
 - keyword search
 - filters
@@ -22,84 +28,90 @@ marp: true
 - save favorite jobs
 - share jobs
 
- 
- -----
- ## Tools:
- - github (screenshot)
- - vercel (screenshot)
- - firebase (screenshot)
- - adzuna API (screenshot)
- - webstorm (screenshot)
- - zenhub (screenshot)
+
+---
+
+## Tools:
+- github (screenshot)
+- vercel (screenshot)
+- firebase (screenshot)
+- adzuna API (screenshot)
+- webstorm (screenshot)
+- zenhub (screenshot)
+
+
+---
+
+### Balsamic : wireframe
+(screenshot)
 
 
 
 
- -------
- ## Introduction 
- # Quest
-
- ### Balsamic : wireframe
- (screenshot)
+---
+## Whimsical : user journey
+(screenshot)
 
 
 
 
- ------
- ## Whimsical : user journey
- (screenshot)
+
+---
+
+# Solution
+## Firebase : authentication / storage
+(screenshot)
 
 
 
- -------
- # Solution
- ## Firebase : authentication / storage
- (screenshot)
+---
 
 
-
- --------
- 
- ## Adzuna : jobs API
- (screenshot)
-
-
-
-
- ---------
- ## Demo: webstorm
+## Adzuna : jobs API
+(screenshot)
 
 
 
 
- --------
- ## Demo: github
+---
+
+## Demo: webstorm
 
 
 
 
- ---------
- ## Demo: vercel 
+---
+
+## Demo: github
 
 
 
 
- -----
+---
+
+## Demo: vercel 
+
+
+
+
+---
+
 
 ## Future work
 
- - Capstone
+- Capstone
 
- - msimbo website
+- msimbo website
 
- - church website
+- church website
 
- - my resume on git.io/
+- my resume on git.io/
 
- ------
-
-
+---
 
 
 
- 
+
+
+
+
