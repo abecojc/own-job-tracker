@@ -1,4 +1,4 @@
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyCk3Eni5C7tY-k_4MVLvrtSgTU3gvyGmf0",
     authDomain: "own-job-tracker.firebaseapp.com",
     projectId: "own-job-tracker",

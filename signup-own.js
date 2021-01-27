@@ -34,8 +34,8 @@ regForm.addEventListener('submit', function (e) {
         validateMinLength (password2)
         validatePassMatch(password,password2)
     }
-    signUp()
-    info.doc().set
+    // signUp()
+    // info.doc().set
 
 })
 
