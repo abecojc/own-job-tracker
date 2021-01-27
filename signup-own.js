@@ -1,10 +1,5 @@
-
-// Declaring variables
-
-// import firebase from 'firebase'
-// require('firebase/auth')
-
 import firebase from "firebase";
+
 
 const regForm = document.querySelector('#form')
 
@@ -18,9 +13,11 @@ const password2 = document.querySelector('#password-repeat')
 
 //sign in
 
-let emails = document.querySelector('#email')
+let emails = document.querySelector('#email-log')
 
-let passwords = document.querySelector('#password')
+let passwords = document.querySelector('#password-log')
+
+const form = document.querySelector('#form')
 
 //const signIn = document.querySelector('#submit')
 
@@ -41,7 +38,7 @@ regForm.addEventListener('submit', function (e) {
         validatePassMatch(password,password2)
     }
     signUp()
-    signIn()
+    info.doc().set
 
 })
 
@@ -128,19 +125,41 @@ function validateMinLength (input) {
 
 
     function signUp(){
-
         const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
         promise.catch(e => alert(e.message));
 
         alert("Signed Up");
-        alert("Now, Sign In with your email and password")
-    }
-
-    function signIn(){
-
-        const promise = auth.signInWithEmailAndPassword(emails.value, passwords.value);
-        promise.catch(e => alert(e.message));
 
     }
 
+    // function signIn(){
+    //     const promise = auth.signInWithEmailAndPassword(emails.value, passwords.value);
+    //     promise.catch(e => alert(e.message));
+    //
+    // }
 
+
+const info = firestore.collection("userInfo")
+
+form.addEventListener('submit',async (e)=>{
+    e.preventDefault()
+
+    let email = emails.value
+    let password = passwords.value
+
+    console.log(email)
+    console.log(password)
+
+    await info.doc().set({
+        email: email,
+        password: password
+    })
+    console.log(info.doc().value)
+
+    .then(()=>{
+        console.log('info saved')
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+})

@@ -1,17 +1,18 @@
 // APP_ID = d9bee79e
 //APP_KEY = a8eea83bb5dbb169da71decb4c8cac85
-const searchForm = document.querySelector('#search-form')
-const jobType = document.querySelector('#job-type')
+let searchForm = document.querySelector('#search-form')
+let jobType = document.querySelector('#job-type')
 const resultSection = document.querySelector('#result-section')
 const searchHeader = document.querySelector('#app')
 
 const SEARCH_COUNTRY = 'us'
 //adds
 // const searchCity = document.querySelector('#location1')
-const searchFull = document.querySelector('#form')
-const keyword = document.querySelector('#keyword')
+let searchFull = document.querySelector('#form')
+let keyword = document.querySelector('#keyword')
 const searchFormFull = document.querySelector('#search-page')
-
+// keyword = jobType
+// searchFull = searchForm
 let likes = 0
 const allLikes = []
 
@@ -41,27 +42,27 @@ searchFull.addEventListener('submit', async function (e) {
   <div id="result-section" class="p-10">
   <h2 class=" text-xl text-white shadow-lg text-center rounded p-2">
       <h1>${keywordsFound} jobs found for <strong>${keyName}</strong> in ${SEARCH_COUNTRY.toUpperCase()}</h1>
-  
+
   </div>`
 
   keywords.forEach(function (key) {
     const div = document.createElement('div')
     div.innerHTML = `
-       <div class="rounded cursor-pointer border-2 border-blue-900 shadow-lg my-2 hover:bg-blue-400">
+       <div class="rounded cursor-pointer border-2 border-white shadow-lg my-2 hover:bg-blue-400">
           <h4 class="p-2 border-2 border-yellow-200 bg-blue-500 text-white whitespace-nowrap shadow-2xl">
                 <a href="${key.redirect_url}">
                        ${key.title}
-                </a> | ${key.location.display_name} 
+                </a> | ${key.location.display_name}
                 <p>${key.location.area[0]}</p>
                 <p>${key.company.display_name}</p>
                 <p>${key.category.label}</p>
           </h4>
            <p  class="p-2 text-white ">
                ${key.description}
-           
+
            </p>
        </div>`
-    resultSection.appendChild(div)
+   resultSection.appendChild(div)
 
     searchHeader.classList.remove('hidden')
     searchFormFull.classList.add('hidden')
@@ -87,7 +88,7 @@ searchForm.addEventListener('submit', async function (e) {
 
   <div id="result-section mt-56" class="p-10">
       <h2 class=" text-xl bg-black shadow-lg text-center rounded p-2">Search results</h2>
-      <h1 class="text-center rounded p-2 text-xl bg-blue-400 text-white">${jobsFound} jobs found for <strong>${jobName}</strong> in ${SEARCH_COUNTRY.toUpperCase()}</h1> 
+      <h1 class="text-center rounded p-2 text-xl bg-blue-400 text-white">${jobsFound} jobs found for <strong>${jobName}</strong> in ${SEARCH_COUNTRY.toUpperCase()}</h1>
   </div>`
 
   jobs.forEach(function (job) {
@@ -95,45 +96,46 @@ searchForm.addEventListener('submit', async function (e) {
     div.innerHTML = `
        <div class="rounded flex flex-col justify-between cursor-pointer border-2 border-blue-900 shadow-lg my-2 hover:bg-blue-400">
           <h4 class="p-2 border-2 border-blue-400 bg-blue-500 text-white whitespace-nowrap shadow-2xl">
-                
+
                 <a href="${job.redirect_url}">
                        ${job.title}
-                 ---------- ${job.location.display_name} </a> 
+                 ---------- ${job.location.display_name} </a>
                  <p>${job.salary_max}</p>
                   <div>
                   <button type="button" id="favorite" onClick="onClick()"><i class="fas fa-thumbs-up"></i>Favorite</button>
 <!--                    <p>Likes: <a >0</a></p>-->
-                                 
+
                    <a class="twitter-share-button bg-white text-blue-800" href="https://twitter.com/intent/tweet">Tweet</a>
 <!--                   <link rel="canonical" href="/web/tweet-button">-->
                  </div>
-                
-                       
+
+
           </h4>
            <p  class="p-2">
                ${job.description}
            </p>
        </div>`
-    resultSection.appendChild(div)
 
+    resultSection.appendChild(div)
+//adds
+    JustOver40k.forEach((job) =>{
+      const div = document.createElement('div')
+      div.innerHTML = `<div class="rounded flex flex-col justify-between cursor-pointer border-2 border-blue-900 shadow-lg my-2 hover:bg-blue-400">
+        Hello ${job.title}</div>`
+      resultSection.appendChild(div)
+     })
     // searchHeader.classList.remove('hidden')
     // // searchFull.classList.add('hidden')
     // console.log(searchFull.classList)
   })
 })
-// 92b62ee9bfd90c11c097004b51438beb
+// // 92b62ee9bfd90c11c097004b51438beb
 
-let allJobs = searchJobs
-let JustOver40k = []
-allJobs.filter = function JustOver40k(job){
-  (job.salary_min >= 40000)
-}
+let allJobs=[]
+allJobs.push(searchJobs)
+let JustOver40k = allJobs.filter(job=>job.salary_min >= 10000)
+ console.log(JustOver40k)
 
-JustOver40k.forEach((job) =>{
-  const div = document.createElement('div')
-  div.innerHTML = `Hello`
-
-})
 
 async function searchJobs (jobString, jobsCount = 2, country = SEARCH_COUNTRY) {
 
@@ -142,6 +144,10 @@ async function searchJobs (jobString, jobsCount = 2, country = SEARCH_COUNTRY) {
 
   const result = await fetch(url)
   const data = await result.json()
-
   return data
+
+
 }
+
+
+
