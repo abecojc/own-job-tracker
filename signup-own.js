@@ -119,7 +119,7 @@ function validateMinLength (input) {
 // const firestore = firebase.firestore()
 // const info = firestore.collection("userInfo")
 
-    firebase.initializeApp(firebaseConfig)
+   console.log( firebase.initializeApp(firebaseConfig))
 
     const auth = firebase.auth()
 
