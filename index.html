@@ -12,47 +12,53 @@
 
 <body>
 <!-- Header  -->
-    <nav class="absolute">
-        <div class="fixed bg-black flex flex-wrap justify-between w-screen text-center border-b-4 border-blue-900">
-            
-            <div class="h-24 w-24 m-2">
-                <a href="index.html"><img src="images/grand-horizon.png" class="w-24 bg-white border-2 border-black rounded-3xl hover:bg-blue-400" alt="logo-arrows"></a>
+<nav class="absolute">
+    <div class="fixed bg-black text-sm font-sans flex justify-between w-screen text-center border-b-4 border-white">
+        
+        <div class="h-24 w-24 m-2">
+            <a href="index.html"><img src="images/grand-horizon.png" class="w-24 bg-white border-2 border-black rounded-3xl hover:bg-blue-400" alt="logo-arrows"></a>
+        </div>
+        <div class="flex font-sans">
+            <div class=" h-8 px-4 m-2 border-b-2 border-white text-white hover:bg-white hover:text-black">
+                <a href="about.html">About</a>
             </div>
-            <div class="flex">
-                <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-yellow-200 hover:bg-blue-500">
-                    <a href="about.html">About</a>
-                </div>
-                <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-yellow-200 hover:bg-blue-500">
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-yellow-200 hover:bg-blue-500">
-                    <a href="resources.html">Resources</a>
-                </div>
-                <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-yellow-200 hover:bg-blue-500">
-                    <a href="help.html">Help</a>
-                </div>
+            <div class=" h-8 px-4 m-2 border-b-2 border-white text-white hover:bg-white hover:text-black">
+                <a href="contact.js">Contact</a>
             </div>
-            
-            <div class="bg-yellow-200 rounded-2xl h-16 p-4 my-2 mx-6 border-2 border-white hover:bg-blue-500">
-                <a href="#form">Log in</a>
+            <div class=" h-8 px-4 m-2 border-b-2 border-white text-white hover:bg-white hover:text-black">
+                <a href="resources.html">Resources</a>
+            </div>
+            <div class=" h-8 px-4 m-2 border-b-2 border-white text-white hover:bg-white hover:text-black">
+                <a href="help.html">Help</a>
             </div>
         </div>
-    </nav>
+        <div class="flex">
+            <div class="bg-white rounded-xl h-10 p-2 my-2 mr-6 border-2 border-white whitespace-nowrap hover:bg-yellow-200 hover:text-2xl">
+                <a href="index.html">Log in</a>
+            </div>
+            <div class="bg-white rounded-xl h-10 p-2 my-2 m-6 border-2 border-white whitespace-nowrap hover:bg-yellow-200 hover:text-2xl">
+                <a href="index.html">Sign up</a>
+            </div>
+        </div>
+    </div>
+</nav>
 <!-- Main section  -->
   
-     <div style="background-image: url('images/job.jpeg')" id="header" class="bg-no-repeat bg-center bg-cover h-screen bg-black w-screen">
-         <div class="pt-28 text-center">
-            <div class="p-6 w-3/5 text-center bg-black shadow-2xl font-sans rounded-lg">
-                <div class="text-3xl text-yellow-200">Grand Horizon Inc.</div>
-                <div class="text-xl text-white">Job Search</div>
+     <div style="background-image: url('images/job.jpeg')" id="header" class="bg-no-repeat bg-cover bg-black w-screen">
+         
+         <div class="pt-28  text-center flex ">
+            <div class="p-4 pt-6 h-screen w-96 items-start text-center bg-black ring-8 ring-gray-700 shadow-2xl font-sans rounded-lg">
+                <div class="text-4xl text-white">Great Horizons</div>
+                <hr>
+                <div class="text-xs text-white border-b-2 border-white pt-2 pb-12">Job Search</div>
             </div>
             
             <div class="flex m-12">
-                 <div id="sign-in" class="py-12 shadow-2xl bg-black bg-opacity-50 h-96 w-1/2 rounded-xl border-4 border-yellow-200">
+                 <div id="sign-in" class="py-24 text-sm shadow-2xl bg-black bg-opacity-50 h-96 w-1/2 rounded-xl ">
                      <form id="form" action="search-own.html">
-                        <h1 class="text-xl text-white">
+                        <h5 class="text-sm text-white">
                             Sign in to Search for jobs
-                        </h1>
+                        </h5>
         
                         <label for="email-log" class="text-white">Email</label>
                         <input type="email" id="email-log" placeholder="Enter your email" class="emailClass my-4 w-2/3 rounded-lg text-center border-2 border-blue-900" name="emailName">
@@ -60,15 +66,15 @@
                         <label for="password-log" class="text-white">Password</label>
                         <input type="text" id="password-log" placeholder="Enter your password" class="passwordClass my-4 w-2/3 rounded-lg text-center border-2 border-blue-900" name="passName">
         
-                        <button id="login" class="submit1 border-2 border-blue-900 mt-2 rounded-lg bg-blue-400 hover:bg-green-400">Sign in</button>
+                        <button id="login" class="submit1 flex flex-col border-2 border-black m-2 p-2 rounded-lg bg-white hover:bg-green-400">Sign in</button>
     
                         <p><a href="signup-own.html" class="text-white">Sign Up</a></p>
                    
                      </form>
                  </div>
                 
-                 <div class="bg-black bg-opacity-50 text-white rounded-2xl p-4 mx-12 w-1/2 border-4 border-yellow-200">
-                    <h1>News feed</h1>
+                 <div class="bg-black bg-opacity-50 text-white text-xs rounded-2xl py-16 px-4 mx-12 w-1/2 ">
+                    <h6>News feed</h6>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus eveniet illum minima nam obcaecati odio quae quaerat quisquam! Blanditiis commodi consequuntur corporis cumque doloribus earum facere fuga harum incidunt iste, itaque maxime nihil odio omnis optio pariatur porro quia quo sapiente sunt ut velit voluptas voluptates! Non odit, rerum!
                  </div>
             </div>
@@ -79,26 +85,25 @@
      </div>
 
      <div class="flex justify-center h-screen w-screen bg-black border-4 border-white p-5 overflow-auto items-center">
-        <a href="#"><i id="linkedin" class="fa fa-linkedin hover:bg-blue-500"></i></a>
-        <a href="#"><i id="twitter" class="fa fa-twitter"></i></a>
-        <a href="#"><i id="facebook" class="fa fa-facebook"></i></a>
-        <a href="#"><i id="instagram" class="fa fa-instagram hover:bg-blue-500"></i></a>
+<!--        <a href="#"><i id="linkedin" class="fa fa-linkedin hover:bg-blue-500"></i></a>-->
+<!--        <a href="#"><i id="twitter" class="fa fa-twitter"></i></a>-->
+<!--        <a href="#"><i id="facebook" class="fa fa-facebook"></i></a>-->
+<!--        <a href="#"><i id="instagram" class="fa fa-instagram hover:bg-blue-500"></i></a>-->
      </div>
 
     <div class="bg-black h-screen">Partners</div>
     <div class="h-screen">Terms and conditions</div>
     
     <ul class="flex justify-center w-screen">
-        <li class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-black hover:bg-blue-500">
+        <li class="bg-white rounded-lg h-12 py-2 px-4 m-2 border-2 border-black hover:bg-blue-500">
             <a href="#">About</a>
         </li>
-        <li class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-black hover:bg-blue-500">
+        <li class="bg-white rounded-lg h-12 py-2 px-4 m-2 border-2 border-black hover:bg-blue-500">
             <a href="#">Contact</a>
         </li>
         <li>Copyright 2021</li>
     </ul>
 
-    
     <script src="./signup-own.js"></script>
 </body>
 </html>
