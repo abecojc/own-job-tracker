@@ -1,117 +1,114 @@
 
-# Great Horizons
-## Job search website:   
 
+
+### Job Horizons
+
+##### Job search website   
+   
+
+<br/> <br/><br/> 
 
 Author: Abeco Rwakabuba
-[@abecojc](htt)
-
----
-# Roadmap
-
-Intro
-Issue 
-Solution
-
-
-
----
-#Intro
-## functionalities
-- keyword search
-- filters
-- create an account
-- sign in
-- explore resources
-- view job listings
-- interact with specific job
-- save favorite jobs
-- share jobs
-
-
----
-
-## Tools:
-- github (screenshot)
-- vercel (screenshot)
-- firebase (screenshot)
-- adzuna API (screenshot)
-- webstorm (screenshot)
-- zenhub (screenshot)
-
-
----
-
-### Balsamic : wireframe
-(screenshot)
-
-
-
-
----
-## Whimsical : user journey
-(screenshot)
-
-
+(https:github.com/abecojc/resume)
 
 
 
 ---
 
-# Solution
-## Firebase : authentication / storage
+### *Overview*
+
+- *Intro*
+- *Scope*
+- *Solution Path*
+
+
+---
+
+#### *Intro*
+
+Job search using API (adzuna)
+
+
+
+---
+
+#### *Scope*
+
+ Functionalities
+<br/> 
+
+- Account
+- Job listings/details
+- Like and share jobs
+
+
+
+---
+
+ Tools
+
+- zenhub
+- github & vercel
+- webstorm (html, tailwindcss, javascript)
+
+
+
+---
+
+Balsamic : wireframe
 (screenshot)
 
 
 
 ---
 
-
-## Adzuna : jobs API
+Whimsical : user journey
 (screenshot)
 
 
+---
+
+Solution path
+
+
+Search adzuna : jobs API
 
 
 ---
 
-## Demo: webstorm
+Live demo
 
-
-
-
----
-
-## Demo: github
-
-
-
-
----
-
-## Demo: vercel 
-
+vercel
 
 
 
 ---
 
+ Future work
+<span style="font-size:.7em">
+ 
+- Inhance interactivity with website
+- Capstone: grit vade mecum
+- Msimbo, Church opportunities
+- Resume on git.io/
 
-## Future work
-
-- Capstone
-
-- msimbo website
-
-- church website
-
-- my resume on git.io/
+</span>
+  
 
 ---
 
+ Acknowledgements
+<br/>
+
+- ULEM/MSIMBO
+- Dele
+- My colleagues
+<br/> <br/>
 
 
+---
 
+*Thank you All for listening*
 
-
+### Q/A
 
