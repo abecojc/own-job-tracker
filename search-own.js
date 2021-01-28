@@ -9,7 +9,8 @@ let jobType = document.querySelector('#job-type')
 //result area
 const resultSection = document.querySelector('#result-section')
 const searchHeader = document.querySelector('#app')
-
+// let jobDetails = document.querySelector('#job-details')
+let jobDetail = document.querySelector('#details-section')
 const SEARCH_COUNTRY = 'us'
 
 //center search bar
@@ -51,35 +52,39 @@ const searchFormFull = document.querySelector('#search-page')
     
       <div id="result-section" class="p-10">
           <h2 class=" text-xl text-white shadow-lg text-center rounded p-2">Search Results</h2>
-          <h2 class="text-center rounded p-2 text-xl bg-blue-400 text-white">${keywordsFound} jobs found for <strong>${keyName}</strong> in ${SEARCH_COUNTRY.toUpperCase()}</h2>  
+          <h2 class="text-center rounded p-2 bg-gray-400 text-white">${keywordsFound} jobs found for <strong>${keyName}</strong> in ${SEARCH_COUNTRY.toUpperCase()}</h2>  
       </div>`
 
-      keywords.forEach(function (key) {
+      keywords.forEach( (key)=> {
         const div = document.createElement('div')
         div.innerHTML = `
-           <div class="rounded shadow-lg my-2 hover:bg-gray-500">
-              <h4 class="p-2 border-b-2 whitespace-nowrap shadow-2xl cursor-pointer border-black bg-gray-400 my-2 hover:bg-blue-400">
-                    <a href="${key.redirect_url}">
-                           ${key.title}
-                    </a> | ${key.location.display_name}
-                    <p>${key.location.area[0]}</p>
-                    <p>${key.company.display_name}</p>
-                    <p>${key.category.label}</p>
-              </h4>
-               <p  class="p-2 bg-white">
-                   ${key.description}
-    
+           <div id="job-details" class=" rounded shadow-lg mb-4 hover:bg-gray-400">  
+               <h4 class="p-2 text-sm border-b-2 whitespace shadow-2xl cursor-pointer border-black bg-gray-400 my-2 hover:bg-gray-500">
+                   
+                    <a href="${key.redirect_url}"> <em>Job title: </em>
+                       ${key.title} </a> 
+                    <p><em>Location: </em>${key.location.display_name+', '+key.location.area[1]+', '+key.location.area[0]}</p> 
+                
+                    <p><em>Company:</em> ${key.company.display_name}</p>
+                    <p><em>Job categories:</em> ${key.category.label}</p>
+                    <p><em>Date posted: </em>${key.created}</p>
+                    <p>${key.id}</p>
+                    
+               </h4>
+              
+               <p  class="p-2 bg-white text-sm">
+                   ${key.description}  
                </p>
+      
            </div>`
-               resultSection.appendChild(div)
-                keyword.value =''
+                resultSection.appendChild(div)
 
+                keyword.value =''
                 searchHeader.classList.remove('hidden')
                 searchFormFull.classList.add('hidden')
       })
     })
-
-//display results from center search bar
+//display results from top search bar
     searchForm.addEventListener('submit', async function (e) {
        e.preventDefault()
 
@@ -119,11 +124,11 @@ const searchFormFull = document.querySelector('#search-page')
 
                   resultSection.appendChild(div)
                   jobType.value =''
-
-                JustOver40k.forEach((job) =>{
-                  resultSection.nextElementSibling.innerHTML =
-                    `<div class="rounded flex flex-col justify-between cursor-pointer border-2 border-gray-600 bg-gray-400 shadow-lg my-2 hover:bg-gray-600-400">
-                    Hello ${job.title}</div>`
+                //
+                // JustOver40k.forEach((job) =>{
+                //   resultSection.nextElementSibling.innerHTML =
+                //     `<div class="rounded flex flex-col justify-between cursor-pointer border-2 border-gray-600 bg-gray-400 shadow-lg my-2 hover:bg-gray-600-400">
+                //     Hello ${job.title}</div>`
 
                     //resultSection.appendChild(div)})
 
@@ -133,26 +138,41 @@ const searchFormFull = document.querySelector('#search-page')
                  })
     })
 // 92b62ee9bfd90c11c097004b51438beb
+//
+//     let allJobs=[]
+//     allJobs.push(searchJobs)
+//     let JustOver40k = allJobs.filter((data)=>{
+//         console.log("10k",data.salary_min >= 10000)
+//     })
 
-    let allJobs=[]
-    allJobs.push(searchJobs)
-    let JustOver40k = allJobs.filter((data)=>{
-        console.log("10k",data.salary_min >= 10000)
-    })
+ function jobDetails(job){
 
+       let newEl = document.createElement('div')
+        // resultSection.nextElementSibling.innerHTML =
+           newEl.innerHTML =
+        `<div class="rounded flex flex-col justify-between bg-white shadow-lg my-2 hover:bg-yellow-200">
+              <h6 class="p-2 whitespace-nowrap border-b-2 border-black shadow-2xl">
+     
+             <button type="button" id="favorite" onClick="onClick()"><i class="fas fa-thumbs-up bg-blue-400"></i>Favorite</button>
+         </h6>
+         <p class="p-2 bg-white"> Hello </p>
+     </div>`
+          jobDetail.appendChild(newEl)
+
+}
 
 
 //get API results
-    async function searchJobs (jobString, jobsCount = 2, country = SEARCH_COUNTRY) {
+    async function searchJobs (jobString, jobsCount = 10, country = SEARCH_COUNTRY) {
 
       const url = `https://api.adzuna.com/v1/api/jobs/${country}/search/1?app_id=d9bee79e&app_key=a8eea83bb5dbb169da71decb4c8cac85&results_per_page=${jobsCount}&what=${jobString}&content-type=application/json`
       console.log("url",url)
 
       const result = await fetch(url)
-      const data = await result.json()
+      const data = result.json()
 
        return data
-    }})
+    }
 
 
 // const API_URL = `https://api.adzuna.com/v1/api/jobs/us/search`
