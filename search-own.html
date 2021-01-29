@@ -10,91 +10,91 @@
     <title>Search Page</title>
 </head>
 
-<body class="bg-black">
+<body class="bg-black font-sans">
 <!-- Header  -->
 
-<nav class="absolute">
+<div style="background-image: url('images/job.jpeg')" id="header" class="bg-no-repeat bg-cover bg-black w-screen">
+
+ <nav class="absolute">
     <div class="fixed bg-black flex justify-between w-screen text-center border-b-4 border-white">
         
         <div class="h-24 w-24 m-2">
-            <a href="index.html"><img src="images/grand-horizon.png" class="w-24 bg-white border-2 border-black rounded-3xl hover:bg-blue-400" alt="logo-arrows"></a>
+            <a href="index.html"><img src="images/grand-horizon.png" class="w-24 h-24 absolute bg-white rounded-3xl hover:bg-gray-400" alt="logo-arrows"></a>
         </div>
-        <div class="flex">
-            <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-yellow-200 hover:bg-blue-500">
-                <a href="#">About</a>
+        <div class="flex font-sans">
+            <div class=" h-8 px-4 m-2 border-b-2 border-white text-white hover:bg-white hover:text-black">
+                <a href="about.html">About</a>
             </div>
-            <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-yellow-200 hover:bg-blue-500">
-                <a href="#">Contact</a>
+            <div class=" h-8 px-4 m-2 border-b-2 border-white text-white hover:bg-white hover:text-black">
+                <a href="contact.js">Contact</a>
             </div>
-            <div class="bg-white rounded-xl h-12 py-2 px-4 m-2 border-2 border-yellow-200 hover:bg-blue-500">
-                <a href="#">Resources</a>
+            <div class=" h-8 px-4 m-2 border-b-2 border-white text-white hover:bg-white hover:text-black">
+                <a href="resources.html">Resources</a>
+            </div>
+            <div class=" h-8 px-4 m-2 border-b-2 border-white text-white hover:bg-white hover:text-black">
+                <a href="help.html">Help</a>
             </div>
         </div>
         
-        <div class="bg-yellow-200 rounded-2xl h-16 p-4 my-2 mr-6 border-2 border-white whitespace-nowrap hover:bg-blue-500">
-            <a href="#sign-in">Log in</a>
+        <div class="bg-white rounded-xl h-12 p-2 my-2 mr-6 border-2 border-white whitespace-nowrap hover:bg-yellow-200 hover:text-2xl">
+            <a href="index.html">Log out</a>
         </div>
     </div>
 </nav>
 <!-- End of Header  -->
+<!--Hidden top search bar-->
 
-<div class="hidden z-0 top-1 pt-20 bg-black border-2 fixed border-yellow-200 shadow-xl w-screen p-2" id="app" >
-    <div class="flex justify-center ">
-         <form id="search-form" class="text-center">
-        
-                <h2 class="text-3xl text-white my-3">Search For Jobs</h2>
-                
-                <label for="job-type"></label>
-                <input id="job-type" name="keyword1" type="text" placeholder="Enter search keywords" class="p-2 text-center rounded-lg w-1/3">
-                
-                <button class="bg-green-700 rounded ml-6 p-2 hover:bg-blue-900">
-                    Search
-                </button>
-        
-         </form>
-        
-         <div class="border-yellow-200">
-             <form id="filter" class="text-center flex flex-col">
-        
-                 <h2 class="text-3xl text-white my-3">Job search criteria</h2>
-        
+<div class="hidden z-0 top-28 bg-black border-b-2 fixed border-white shadow-xl p-2" id="app" >
+    
+    <h3 class="text-xl text-white text-center font-sans w-screen">Search criteria</h3>
+    <hr>
+    <div class="flex mt-2">
+              <form id="search-form" class="text-center">
+    
+                 <label for="job-type"></label>
+                 <input id="job-type" name="keyword1" type="text" placeholder="Enter search keywords" class=" my-3 text-center rounded-lg w-3/4">
+    
                  <label for="salary"></label>
-                 <input id="salary" name="salary" type="text" placeholder="Enter salary" class="p-2 text-center rounded-lg w-1/3">
+                 <input id="salary" name="salary" type="text" placeholder="Enter salary" class=" text-center rounded-lg w-1/3">
     
                  <label for="schedule"></label>
-                 <input id="schedule" name="schedule" type="text" placeholder="Enter schedule" class="p-2 text-center rounded-lg w-1/3">
+                 <input id="schedule" name="schedule" type="text" placeholder="Enter schedule" class="mx-1 text-center rounded-lg w-1/3">
     
                  <label for="contractType"></label>
-                 <input id="contractType" name="contract" type="text" placeholder="Enter contract" class="p-2 text-center rounded-lg w-1/3">
-                 
-                 <button class="bg-white rounded ml-6 p-2 hover:bg-yellow-200">
+                 <input id="contractType" name="contract" type="text" placeholder="Enter contract" class=" mx-1 text-center rounded-lg w-1/3">
+    
+                 <label for="results-per-page"></label>
+                 <input id="results-per-page" name="result" type="number" placeholder="Results per page" class="mx-1 text-center rounded-lg w-1/3">
+    
+                 <button class="bg-white rounded mx-32  p-2 hover:bg-yellow-200">
                      Search
                  </button>
     
              </form>
-         </div>
     </div>
 </div>
 
-<div class="pt-56"></div>
-<div id="result-section" class="px-4 rounded-lg shadow-lg my-2 border-2 border-blue-900"></div>
+      <div class="pt-56 flex"></div>
+      <div class="flex justify-between">
+          <div id="result-section" onclick="jobDetails()" class="px-4 w-1/3 my-2 "></div>
+          <div id="details-section" class="my-2 w-2/3 px-4 "></div>
+      </div>
 
-
-<div class="h-screen p-2 flex flex-col " id="search-page" >
-    <form class="p-12 rounded bg-black flex items-center whitespace-nowrap flex-col" id="form">
-        <div class="flex items-center w-3/4 flex-col">
-            <div class="text-white rounded shadow-lg font-bold mt-12 mb-4 w-96 text-center text-3xl">Search for Jobs</div>
-            
-            <input id="keyword" name="keyword" placeholder="Enter search keyword" class="bg-gray-300 p-3 text-center w-3/4 rounded-lg text-xl my-4">
-           
-            <button class=" flex justify-center m-8 h-16" id="submit">
-                <div class="bg-yellow-200 p-3 shadow-lg text-3xl w-56 rounded-lg hover:bg-blue-900 h-16">Search</div>
-            </button>
-        </div>
-    </form>
+    <div class="h-screen p-2 flex flex-col " id="search-page" >
+        <form class="p-12 rounded flex items-center whitespace-nowrap flex-col" id="form">
+            <div class="flex items-center w-3/4 flex-col">
+                <div class=" rounded shadow-lg mt-12 mb-4 w-96 text-center">Search for Jobs</div>
+                <label for="keyword"></label>
+                <input id="keyword" name="keyword" placeholder="Enter search keyword" class="p-3 text-white text-center w-3/4 border-2 border-black rounded-lg my-4">
+               
+                <button id="submit" class=" flex justify-center m-8 h-12 bg-black p-3 shadow-lg text-white w-56 rounded-lg hover:bg-yellow-200 h-16">
+                        Search
+                </button>
+            </div>
+        </form>
+    </div>
 </div>
-
-<script src="search-own.js"></script>
+  <script src="search-own.js"></script>
 
 </body>
 </html>

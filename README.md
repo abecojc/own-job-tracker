@@ -1,76 +1,114 @@
+
+
+
+### Job Horizons
+
+##### Job search website   
+   
+
+<br/> <br/><br/> 
+
+Author: Abeco Rwakabuba
+(https:github.com/abecojc/resume)
+
+
+
 ---
-marp: true
+
+### *Overview*
+
+- *Intro*
+- *Scope*
+- *Solution Path*
+
+
 ---
 
-# Great Horizons
-## A job search with functionalities:
-- keyword search
-- filters
-- create an account
-- sign in
-- explore resources
-- view job listings
-- interact with specific job
-- save favorite jobs
-- share jobs
+#### *Intro*
 
+Job search using API (adzuna)
+
+
+
+---
+
+#### *Scope*
+
+ Functionalities
+<br/> 
+
+- Account
+- Job listings/details
+- Like and share jobs
+
+
+
+---
+
+ Tools
+
+- zenhub
+- github & vercel
+- webstorm (html, tailwindcss, javascript)
+
+
+
+---
+
+Balsamic : wireframe
+(screenshot)
+
+
+
+---
+
+Whimsical : user journey
+(screenshot)
+
+
+---
+
+Solution path
+
+
+Search adzuna : jobs API
+
+
+---
+
+Live demo
+
+vercel
+
+
+
+---
+
+ Future work
+<span style="font-size:.7em">
  
- -----
- ## Tools:
- - github (screenshot)
- - vercel (screenshot)
- - firebase (screenshot)
- - adzuna API (screenshot)
- - webstorm (screenshot)
- - zenhub (screenshot)
+- Inhance interactivity with website
+- Capstone: grit vade mecum
+- Msimbo, Church opportunities
+- Resume on git.io/
+
+</span>
+  
+
+---
+
+ Acknowledgements
+<br/>
+
+- ULEM/MSIMBO
+- Dele
+- My colleagues
+<br/> <br/>
 
 
+---
 
+*Thank you All for listening*
 
- -------
- ## Balsamic : wireframe
- (screenshot)
+### Q/A
 
-
-
-
- ------
- ## Whimsical : user journey
- (screenshot)
-
-
-
- -------
- ## Firebase : authentication / storage
- (screenshot)
-
-
-
- --------
- ## Adzuna : jobs API
- (screenshot)
-
-
-
-
- ---------
- ## Demo: webstorm
-
-
-
-
- --------
- ## Demo: github
-
-
-
-
- ---------
- ## Demo: vercel 
-
-
-
-
- -----
-
- 

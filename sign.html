@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+<!--    <link rel="shortcut icon" href="#" />-->
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+<!--    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./dist/tailwind.css">
+    <title>Sign in</title>
+</head>
+<body>
+<div>
+ <nav class="absolute fixed top-0">
+    <div class=" bg-black flex justify-between whitespace-nowrap w-screen text-center border-b-4 border-white">
+        
+        <div class="h-24 w-24 m-2">
+            <a href="index.html"><img src="images/grand-horizon.png" class="w-24 h-24 absolute bg-white rounded-3xl hover:bg-gray-400" alt="logo-arrows"></a>
+        </div>
+        <div class="flex font-sans">
+            <div class=" h-8 px-4 m-2 border-b-2 border-white text-white hover:bg-white hover:text-black">
+                <a href="about.html">About</a>
+            </div>
+            <div class=" h-8 px-4 m-2 border-b-2 border-white text-white hover:bg-white hover:text-black">
+                <a href="contact.js">Contact</a>
+            </div>
+            <div class=" h-8 px-4 m-2 border-b-2 border-white text-white hover:bg-white hover:text-black">
+                <a href="resources.html">Resources</a>
+            </div>
+            <div class=" h-8 px-4 m-2 border-b-2 border-white text-white hover:bg-white hover:text-black">
+                <a href="help.html">Help</a>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-xl h-12 p-2 my-2 mr-6 border-2 border-white whitespace-nowrap hover:bg-yellow-200 hover:text-2xl">
+            <a href="index.html">Log out</a>
+        </div>
+    </div>
+ </nav>
+
+ <div id="sign-in" class="mx-36 mt-32 whitespace p-12 text-sm shadow-2xl bg-black bg-opacity-50 h-96 w-1/2 rounded-xl ">
+    <form id="form" class="" >
+        <!--                           action="search-own.html">-->
+        <h5 class="text-sm text-white my-16">
+            Sign in to Search for jobs
+        </h5>
+        
+<!--        <label for="email-log" class=""></label>-->
+<!--        <input type="email" id="email-log" placeholder="Enter your email" class="emailClass px-4 w-44 rounded-lg  text-center border-2 border-black" name="emailName">-->
+        
+        <button id="login" class="submit1  border-2 border-black p-2 rounded-lg bg-white hover:bg-green-400">Sign in with Google</button>
+        
+        <p><a href="./signup-own.html" class="ml-16 text-white text-center hover:bg-white hover:text-black">Sign Up</a></p>
+    
+    </form>
+ </div>
+    <div id="user-name" class="bg-white rounded-xl h-10 p-2 my-2 m-6 border-2 border-white whitespace-nowrap hover:bg-yellow-200 hover:text-2xl">
+    
+    </div>
+
+</div>
+<!--<script  src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>-->
+<!--<script  src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>-->
+<!--<script  src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>-->
+
+
+     <script src="./init-firebase.js"></script>
+    <script src="./sign-google.js"></script>
+</body>
+</html>

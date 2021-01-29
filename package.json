@@ -10,7 +10,6 @@
      },
      "scripts": {
           "dev": "live-server .",
-          "tw": "tailwind build ./src/tailwind.css -o ./dist/tailwind.css",
-          "type": "module"
+          "tw": "tailwind build ./src/tailwind.css -o ./dist/tailwind.css"
      }
 }
