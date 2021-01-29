@@ -9,6 +9,7 @@ let jobType = document.querySelector('#job-type')
 //result area
 const resultSection = document.querySelector('#result-section')
 const searchHeader = document.querySelector('#app')
+
 // let jobDetails = document.querySelector('#job-details')
 let jobDetail = document.querySelector('#details-section')
 const SEARCH_COUNTRY = 'us'
@@ -82,8 +83,10 @@ const searchFormFull = document.querySelector('#search-page')
                 keyword.value =''
                 searchHeader.classList.remove('hidden')
                 searchFormFull.classList.add('hidden')
+
       })
     })
+
 //display results from top search bar
     searchForm.addEventListener('submit', async function (e) {
        e.preventDefault()
@@ -111,20 +114,32 @@ const searchFormFull = document.querySelector('#search-page')
             const div = document.createElement('div')
 
               div.innerHTML = `
-               <div class="rounded flex flex-col justify-between bg-white shadow-lg my-2 hover:bg-yellow-200">
-                  <h6 class="p-2 whitespace-nowrap border-b-2 border-black shadow-2xl">      
+               <div class=" rounded shadow-lg mb-4 hover:bg-gray-400">  
+                   <h6 class="p-2 text-sm border-b-2 whitespace shadow-2xl cursor-pointer bg-gray-400 my-2 hover:bg-gray-500">
+                       
+                        <a href="${job.redirect_url}"> <em>Job title: </em>
+                           ${job.title} </a> 
+                        <p><em>Location: </em>${job.location.display_name+', '+job.location.area[1]+', '+job.location.area[0]}</p> 
                     
-                     <a href="${job.redirect_url}"> ${job.title} ===== ${job.location.display_name} </a>
-                     <p>${job.salary_max}</p>                    
+                        <p><em>Company:</em> ${job.company.display_name}</p>
+                        <p><em>Job categories:</em> ${job.category.label}</p>
+                        <p><em>Date posted: </em>${job.created}</p>
+                        <p>${job.id}</p>
+                        
                         <button type="button" id="favorite" onClick="onClick()"><i class="fas fa-thumbs-up bg-blue-400"></i>Favorite</button>      
                           
-                  </h6>
-                         <p class="p-2 bg-white"> ${job.description}</p>
+                   </h6>
+                  
+                   <p  class="p-2 bg-white text-sm">
+                       ${job.description}  
+                   </p>
+          
                </div>`
 
                   resultSection.appendChild(div)
                   jobType.value =''
-                //
+
+
                 // JustOver40k.forEach((job) =>{
                 //   resultSection.nextElementSibling.innerHTML =
                 //     `<div class="rounded flex flex-col justify-between cursor-pointer border-2 border-gray-600 bg-gray-400 shadow-lg my-2 hover:bg-gray-600-400">
@@ -137,6 +152,7 @@ const searchFormFull = document.querySelector('#search-page')
         // console.log(searchFull.classList)
                  })
     })
+
 // 92b62ee9bfd90c11c097004b51438beb
 //
 //     let allJobs=[]
@@ -145,21 +161,30 @@ const searchFormFull = document.querySelector('#search-page')
 //         console.log("10k",data.salary_min >= 10000)
 //     })
 
- function jobDetails(job){
+   function jobDetails(job){
 
        let newEl = document.createElement('div')
+
         // resultSection.nextElementSibling.innerHTML =
-           newEl.innerHTML =
-        `<div class="rounded flex flex-col justify-between bg-white shadow-lg my-2 hover:bg-yellow-200">
+       newEl.innerHTML =
+         ` <div class="pt-24 rounded flex flex-col justify-between bg-white shadow-lg my-2 hover:bg-yellow-200">
               <h6 class="p-2 whitespace-nowrap border-b-2 border-black shadow-2xl">
      
-             <button type="button" id="favorite" onClick="onClick()"><i class="fas fa-thumbs-up bg-blue-400"></i>Favorite</button>
-         </h6>
-         <p class="p-2 bg-white"> Hello </p>
-     </div>`
-          jobDetail.appendChild(newEl)
+                    <button type="button" id="favorite" onClick="onClick()">
+                        <i class="fas fa-thumbs-up bg-blue-400"></i>
+                        Favorite</button>                        
+              </h6>
+              <p class="p-2 bg-white"> Hello </p>             
+           </div>`
 
-}
+          jobDetail.appendChild(newEl)
+          if(resultSection.onclick && jobDetail.innerHTML!==''){
+              newEl.innerHTML=`<div class="hidden"></div>`
+          }else{
+              jobDetail.appendChild(newEl)
+
+          }
+   }
 
 
 //get API results
