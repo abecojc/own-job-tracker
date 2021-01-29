@@ -1,13 +1,30 @@
 
 
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+let uiConfig = {
+    signInOptions : [
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        //firebase.auth.FacebookAuthProvider.PROVIDER_ID
+    ],
+    signInSuccessUrl: "search-own.html"
+}
+
+ui.start('#login-ui',uiConfig)
+
+
+//google auth provider
 const provider = new firebase.auth.GoogleAuthProvider()
-let usernames = document.querySelector('#user-name')
+
+let usernames = document.querySelector('#user')
 
 let user
 let logIn = document.querySelector('#login')
 
 usernames.innerHTML = `
-<div class="bg-red-700"> Welcome ${window.localStorage.setItem('loggedInUser',user)}</div>`
+<span class="bg-white "> Welcome ${window.localStorage.setItem('loggedInUser',user)}</span>`
 
 logIn.addEventListener('click',()=>{
     googleSignInPopup(provider)
@@ -38,7 +55,7 @@ logIn.addEventListener('click',()=>{
 
     })}
 
-
+//
 
 
    // }).catch((error) => {

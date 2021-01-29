@@ -19,6 +19,19 @@ let searchFull = document.querySelector('#form')
 let keyword = document.querySelector('#keyword')
 const searchFormFull = document.querySelector('#search-page')
 
+
+firebase.auth().onAuthStateChanged((user)=> {
+    if(user){
+
+        document.querySelector('#user')
+            .innerHTML = `${user.displayName}`
+        // console.log('User:', user)
+
+    }  else {
+        // user doesn't exit
+        window.location.href = 'signup-own.html'
+    }
+})
 // keyword = jobType
 // searchFull = searchForm
 // let likes = 0
@@ -76,7 +89,9 @@ const searchFormFull = document.querySelector('#search-page')
                <p  class="p-2 bg-white text-sm">
                    ${key.description}  
                </p>
-      
+               // <iframe src=`${key.redirect_url}`>
+               // </iframe>
+               //
            </div>`
                 resultSection.appendChild(div)
 
@@ -87,6 +102,13 @@ const searchFormFull = document.querySelector('#search-page')
       })
     })
 
+    let allJobs=[]
+
+    let justOneJob = allJobs.filter((job)=>{
+        job.onclick = jobDetails
+
+    })
+     console.log("10k",justOneJob)
 //display results from top search bar
     searchForm.addEventListener('submit', async function (e) {
        e.preventDefault()
@@ -110,7 +132,7 @@ const searchFormFull = document.querySelector('#search-page')
               <h2 class="text-center p-2 text-xl border-b-2 w-5/6 border-white text-white">${jobsFound} jobs found for <strong>${jobName}</strong> in ${SEARCH_COUNTRY.toUpperCase()}</h2>
           </div>`
 
-          jobs.forEach(function (job) {
+          jobs.forEach((job)=> {
             const div = document.createElement('div')
 
               div.innerHTML = `
@@ -136,6 +158,9 @@ const searchFormFull = document.querySelector('#search-page')
           
                </div>`
 
+                  allJobs.push(job)
+                  console.log("all jobs",allJobs[i])
+
                   resultSection.appendChild(div)
                   jobType.value =''
 
@@ -155,19 +180,15 @@ const searchFormFull = document.querySelector('#search-page')
 
 // 92b62ee9bfd90c11c097004b51438beb
 //
-//     let allJobs=[]
-//     allJobs.push(searchJobs)
-//     let JustOver40k = allJobs.filter((data)=>{
-//         console.log("10k",data.salary_min >= 10000)
-//     })
 
-   function jobDetails(job){
+
+   function jobDetails(allJobs){
 
        let newEl = document.createElement('div')
 
         // resultSection.nextElementSibling.innerHTML =
        newEl.innerHTML =
-         ` <div class="pt-24 rounded flex flex-col justify-between bg-white shadow-lg my-2 hover:bg-yellow-200">
+         `<div class="pt-24 rounded flex flex-col justify-between bg-white shadow-lg my-2 hover:bg-yellow-200">
               <h6 class="p-2 whitespace-nowrap border-b-2 border-black shadow-2xl">
      
                     <button type="button" id="favorite" onClick="onClick()">
@@ -177,13 +198,13 @@ const searchFormFull = document.querySelector('#search-page')
               <p class="p-2 bg-white"> Hello </p>             
            </div>`
 
-          jobDetail.appendChild(newEl)
-          if(resultSection.onclick && jobDetail.innerHTML!==''){
-              newEl.innerHTML=`<div class="hidden"></div>`
-          }else{
-              jobDetail.appendChild(newEl)
-
-          }
+          // jobDetail.appendChild(newEl)
+          // if(resultSection.onclick && jobDetail.innerHTML!==''){
+          //     newEl.innerHTML=`<div class="hidden"></div>`
+          // }else{
+          //     jobDetail.appendChild(newEl)
+          //
+          // }
    }
 
 
