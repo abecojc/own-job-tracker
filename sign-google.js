@@ -1,34 +1,52 @@
 
 
-const provider = new firebase.auth.GoogleAuthProvider();
-
+const provider = new firebase.auth.GoogleAuthProvider()
 let usernames = document.querySelector('#user-name')
 
-let user;
-usernames.innerHTML = `Welcome${window.localStorage.setItem('loggedInUser',user.f_name)}`
-
+let user
 let logIn = document.querySelector('#login')
-logIn.addEventListener(()=>googleSignInPopup)
 
-function googleSignInPopup(provider) {
-    firebase.auth()
+usernames.innerHTML = `
+<div class="bg-red-700"> Welcome ${window.localStorage.setItem('loggedInUser',user)}</div>`
+
+logIn.addEventListener('click',()=>{
+    googleSignInPopup(provider)
+
+   console.log(googleSignInPopup)
+
+})
+
+ function googleSignInPopup(provider) {
+  firebase.auth()
         .signInWithPopup(provider)
         .then((result) => {
             console.log(result)
-             user = result.user
-            window.localStorage.setItem('loggedInUser', user.f_name)
+
+            user = result.user
+            console.log(user)
+
+            window.localStorage.setItem('loggedInUser', user)
+
+
+        }).catch((error) => {
+
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        var email = error.email;
+        var user = error.user;
+
 
     })}
 
 
 
-// }).catch((error) => {
-//
-//     var errorCode = error.code;
-//     var errorMessage = error.message;
-//     var email = error.email;
-//     var credential = error.credential;
-//
+
+   // }).catch((error) => {
+   //
+   //      var errorCode = error.code;
+   //      var errorMessage = error.message;
+   //      var email = error.email;
+   //      var user = error.user;
 
 // function googleSignInPopup(provider) {
 //     // [START auth_google_signin_popup]
