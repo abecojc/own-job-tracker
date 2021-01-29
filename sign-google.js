@@ -16,12 +16,12 @@ ui.start('#login-ui',uiConfig)
 
 
 //google auth provider
-const provider = new firebase.auth.GoogleAuthProvider()
+let provider = new firebase.auth.GoogleAuthProvider()
 
 let usernames = document.querySelector('#user')
 
 let user
-let logIn = document.querySelector('#login')
+let logIn = document.querySelector('#login-ui')
 
 usernames.innerHTML = `
 <span class="bg-white "> Welcome ${window.localStorage.setItem('loggedInUser',user)}</span>`
@@ -44,13 +44,13 @@ logIn.addEventListener('click',()=>{
 
             window.localStorage.setItem('loggedInUser', user)
 
-
-        }).catch((error) => {
-
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        var email = error.email;
-        var user = error.user;
+        //
+        // }).catch((error) => {
+        //
+        // var errorCode = error.code;
+        // var errorMessage = error.message;
+        // var email = error.email;
+        // var user = error.user;
 
 
     })}
